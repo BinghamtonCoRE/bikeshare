@@ -19,7 +19,7 @@ class User(db.Document):
     user_type = db.IntField(required=True, default=0)
     banned = db.BooleanField(required=True, default=False)
     profile = db.EmbeddedDocumentField(Profile)
-    #TODO: add the personal bike field
+    # TODO: add the personal bike field
 
 
 class Bike(db.Document):
