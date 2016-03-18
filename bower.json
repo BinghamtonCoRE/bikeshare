@@ -1,0 +1,19 @@
+{
+  "name": "bikeshare_app",
+  "authors": [
+    "Taylor Foxhall <tfoxhal1@binghamton.edu>"
+  ],
+  "description": "The web application for Binghamton University Bike Share program",
+  "main": "app.py",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
