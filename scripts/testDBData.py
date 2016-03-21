@@ -8,15 +8,15 @@ brands = ['Schwinn', 'Giant', 'Trek']
 client = MongoClient()
 
 db = client.bikeshare
-db.users.drop()
+db.user.drop()
 
-users = db.users
+users = db.user
 
 for i in range(0, len(names)):
   users.insert_one({'name':names[i], 'email':emails[i], 'active':True, 'user_type':0, 'banned':False})
 
-db.bikes.drop()
-bikes = db.bikes
+db.bike.drop()
+bikes = db.bike
 
 for i in range(0, 10):
   bikes.insert_one({'owner':'BUBS','make':brands[randint(0,1)]})
