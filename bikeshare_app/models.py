@@ -22,8 +22,15 @@ class User(db.Document):
     # TODO: add the personal bike field
 
 
-class Bike(db.Document):
+class Bike(db.EmbeddedDocument):
     """Model for bikes"""
     owner = db.StringField(required=True, default="BUBS")
-    bike_id = db.IntField(required=True, unique=True)
     make = db.StringField(require=True)
+    model = db.StringField(required=True)
+    color = db.StringField(required=True)
+    serial = db.StringField(required=True)
+    size = db.IntField(required=True)
+    repair_active = db.BooleanField(required=True, default=False)
+    location = db.StringField(required=True)
+    repair_ids = db.ListField(db.ObjectIdField(), required=True)
+    reported_missing = db.BooleanField(required=True, default=False)
