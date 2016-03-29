@@ -11,16 +11,6 @@ class Profile(db.EmbeddedDocument):
     fav_bikes = db.ListField(db.IntField())
 
 
-class User(db.Document):
-    """Model for users"""
-    name = db.StringField(required=True)
-    email = db.EmailField(required=True, unique=True)
-    active = db.BooleanField(required=True, default=True)
-    user_type = db.IntField(required=True, default=0)
-    banned = db.BooleanField(required=True, default=False)
-    profile = db.EmbeddedDocumentField(Profile, required=False)
-    bike = db.EmbeddedDocumentField(Personal_Bike, required=False)
-
 class Bike(db.EmbeddedDocument):
     """Model for bikes"""
     owner = db.StringField(required=True, default="BUBS")
@@ -35,7 +25,7 @@ class Bike(db.EmbeddedDocument):
     reported_missing = db.BooleanField(required=True, default=False)
 
 
-class Personal_Bike(db.Document):
+class Personal_Bike(db.EmbeddedDocument):
     """Model for a users personal bike"""
     bike = db.EmbeddedDocumentField(Bike, required=True)
     user = db.ObjectIdField(required=True)
@@ -43,6 +33,16 @@ class Personal_Bike(db.Document):
     comment = db.StringField(required=True)
     lock_brand = db.StringField(required=False)
 
+
+class User(db.Document):
+    """Model for users"""
+    name = db.StringField(required=True)
+    email = db.EmailField(required=True, unique=True)
+    active = db.BooleanField(required=True, default=True)
+    user_type = db.IntField(required=True, default=0)
+    banned = db.BooleanField(required=True, default=False)
+    profile = db.EmbeddedDocumentField(Profile, required=False)
+    bike = db.EmbeddedDocumentField(Personal_Bike, required=False)
 
 class Active_Share(db.Document):
     """Model for the bike share owned bikes"""
