@@ -25,7 +25,7 @@ class Bike(db.EmbeddedDocument):
     reported_missing = db.BooleanField(required=True, default=False)
 
 
-class Personal_Bike(db.EmbeddedDocument):
+class PersonalBike(db.EmbeddedDocument):
     """Model for a users personal bike"""
     bike = db.EmbeddedDocumentField(Bike, required=True)
     user = db.ObjectIdField(required=True)
@@ -42,9 +42,9 @@ class User(db.Document):
     user_type = db.IntField(required=True, default=0)
     banned = db.BooleanField(required=True, default=False)
     profile = db.EmbeddedDocumentField(Profile, required=False)
-    bike = db.EmbeddedDocumentField(Personal_Bike, required=False)
+    bike = db.EmbeddedDocumentField(PersonalBike, required=False)
 
-class Active_Share(db.Document):
+class ActiveShare(db.Document):
     """Model for the bike share owned bikes"""
     available = db.BooleanField(required=True, default=False)
     uses = db.IntField(required=True, default=0)
