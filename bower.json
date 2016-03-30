@@ -1,7 +1,10 @@
 {
   "name": "bikeshare_app",
   "authors": [
-    "Taylor Foxhall <tfoxhal1@binghamton.edu>"
+    "Taylor Foxhall <lxmachina@gmail.com>",
+    "Adam Nieto <anieto1@binghamton.edu>",
+    "Joe Palazzolo <jpalazz2@gmail.com>",
+    "Alan Plotko <alan.plotko@gmail.com>"
   ],
   "description": "The web application for Binghamton University Bike Share program",
   "main": "app.py",
@@ -15,5 +18,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#^2.1.8"
+  }
 }
