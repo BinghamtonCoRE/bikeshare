@@ -5,5 +5,5 @@ install:
   - pip install -r requirements.txt
 script:
   - nosetests
-  - pylint --load-plugins=pylint_flask -E bikeshare_app
-  - pylint --load-plugins=pylint_flask -E tests
+  - pylint -E bikeshare_app
+  - pylint -E tests
