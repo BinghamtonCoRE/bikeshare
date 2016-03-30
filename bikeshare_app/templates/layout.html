@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <title>BUBS | {% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('bower.static', filename='semantic/dist/semantic.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        {% block navigation %}
+        <div id="navigation" class="ui green large attached stackable inverted menu">
+            <div class="header item">BUBS</div>
+            <a class="item" href="/">Available Bikes</a>
+        </div>
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+
+        {% block scripts %}
+        <script src="{{ url_for('bower.static', filename='jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ url_for('bower.static', filename='semantic/dist/semantic.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

@@ -4,6 +4,7 @@ Babel==2.2.0
 colorama==0.3.7
 docutils==0.12
 Flask==0.10.1
+Flask-Bower==1.2.1
 flask-mongoengine==0.7.5
 Flask-WTF==0.12
 gunicorn==19.4.5

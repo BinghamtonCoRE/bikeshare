@@ -15,7 +15,9 @@ def index():
 @app.route("/admin")
 def admin():
     """The admin page"""
-    return "Admin page"
+    #TODO Check user credentials for admin role
+    # Allow user through if check passed, else log attempt and return home
+    return render_template('admin.html')
 
 # Bike request endpoint
 @app.route("/request_bike/<user_email>/<int:bike_id>")
