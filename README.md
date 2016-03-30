@@ -2,6 +2,7 @@
 
 - Git (of course)
 - Python 3 (we use 3.5)
+- MongoDB (have a local database called 'bikeshare' running)
 - Node & NPM (we use bower to install dependencies, e.g. the UI components)
 
 ## Setup
@@ -21,6 +22,8 @@ pip install -r requirements.txt
 ```
 bower install
 ```
+
+5) We have some scripts in the scripts directory for inserting test data to your local MongoDB database. Assuming you have the local database running, just run the script using Python 3.
 
 ## Running the app
 
