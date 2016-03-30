@@ -1,0 +1,17 @@
+<!doctype html>
+<title>Available Bikes</title>
+<h1>There are {{ bikes.count() }} bikes available</h1>
+<table>
+    <th>
+        Owner
+    </th>
+    <th>
+        Make
+    </th>
+{% for bike in bikes %}
+<tr>
+    <td>{{ bike.bike.owner }}</td>
+    <td>{{ bike.bike.make }}</td>
+</tr>
+{% endfor %}
+</table>
