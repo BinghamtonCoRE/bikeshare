@@ -1,12 +1,12 @@
 from bikeshare_app import app
-from bikeshare_app.models import Active_Share
+from bikeshare_app.models import ActiveShare
 from flask import render_template
 
 # Index page
 # Lets just show what bikes are available and have a link to checkout a bike
 @app.route("/")
 def index():
-    return Active_Share.objects.first().available
+    return render_template('bikes.html', bikes=ActiveShare.objects(available=True))
 
 # Admin page
 # Display bike availabilities again. Ability to alter database info

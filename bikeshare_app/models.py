@@ -53,3 +53,4 @@ class ActiveShare(db.Document):
     last_user_email = db.EmailField(required=True)
     key_number = db.StringField(required=True)
     bike = db.EmbeddedDocumentField(Bike, required=True)
+    meta = {'collection': 'activeshare'}
