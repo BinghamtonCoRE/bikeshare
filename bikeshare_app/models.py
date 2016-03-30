@@ -52,3 +52,4 @@ class Active_Share(db.Document):
     height_max = db.IntField(required=True)
     last_user_email = db.EmailField(required=True)
     key_number = db.StringField(required=True)
+    bike = db.EmbeddedDocumentField(Bike, required=True)
