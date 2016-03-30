@@ -1,3 +1,5 @@
+"""Initialize the bikeshare app"""
+#pylint: disable=no-name-in-module,import-error,invalid-name,wrong-import-position
 from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 
