@@ -1,0 +1,25 @@
+/*=================
+    Navigation
+===================*/
+
+#navigation {
+    margin-bottom: 50px;
+}
+
+#navigation .header.item {
+    font-size: 24px;
+    padding: 10px 25px;
+}
+
+#navigation .item {
+    color: #fff;
+    font-size: 18px;
+}
+
+/*=====================
+    Available Bikes
+=======================*/
+
+table#available_bikes {
+    margin-bottom: 25px;
+}

@@ -12,9 +12,13 @@ def index():
 # Display bike availabilities again. Ability to alter database info
 @app.route("/admin")
 def admin():
-    return "Admin page"
+    #TODO Check user credentials for admin role
+    # Allow user through if check passed, else log attempt and return home
+    return render_template('admin.html')
 
 # Bike request endpoint
 @app.route("/request_bike/<user_email>/<int:bike_id>")
 def request_bike():
-    return "Bike request"
+    # TODO Handle logic for requesting a bike
+    # Return result object that the future template will use
+    return render_template('request_bike.html', bike_id=bike_id)
