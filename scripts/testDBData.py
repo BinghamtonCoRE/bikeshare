@@ -21,7 +21,7 @@ client = MongoClient()
 db = client.bikeshare
 print("Created database: 'bikeshare'")
 db.user.drop()
-db.bike.drop()
+db.active_share.drop()
 
 def genUsers():
     print("Created collection 'user'")
@@ -37,8 +37,8 @@ def genUsers():
     print("Added", len(names), "users...")
 
 def genActiveShareBikes():
-    print("Created collection 'bike'")
-    bike = db.bike
+    print("Created collection 'active_share'")
+    bike = db.active_share
     for i in range(0, 25):
         bike.insert_one({
             'available': True,
