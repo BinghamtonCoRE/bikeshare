@@ -10,7 +10,7 @@ class BaseConfig(object):
     TESTING = False
     MONGODB_SETTINGS = {'db': 'bikeshare'}
     LOGGING_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    LOGGING_LOCATION = 'booshelf.log'
+    LOGGING_LOCATION = 'bikeshare.log'
     LOGGING_LEVEL = logging.INFO
 
 class TestingConfig(BaseConfig):
@@ -41,6 +41,7 @@ def configure_app(app):
     app.config.from_object(CONFIG[config_name])
     handler = logging.FileHandler(app.config['LOGGING_LOCATION'])
     handler.setLevel(app.config['LOGGING_LEVEL'])
+    logging.getLogger().setLevel(app.config['LOGGING_LEVEL'])
     formatter = logging.Formatter(app.config['LOGGING_FORMAT'])
     handler.setFormatter(formatter)
     app.logger.addHandler(handler)
