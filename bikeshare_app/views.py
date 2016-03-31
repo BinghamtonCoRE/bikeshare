@@ -25,5 +25,5 @@ def admin():
 @app.route("/request_bike/<user_email>/<int:bike_id>")
 def request_bike(user_email, bike_id):
     """This endpoint is for requesting a bike"""
-    app.logger.debug('User %s requesting bike %d' % user_email, bike_id)
+    app.logger.debug('User %s requesting bike %d' % (user_email, bike_id))
     return "Bike request"
