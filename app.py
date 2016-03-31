@@ -1,6 +1,5 @@
-from bikeshare_app import create_app
-# Dont call app.run(). Uwsgi will do this for us
+"""Helper to run the app"""
+from bikeshare_app import app
 
 if __name__ == "__main__":
-    app = create_app()
     app.run()

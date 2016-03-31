@@ -1,3 +1,4 @@
+# pylint: skip-file
 import sys
 from pymongo import MongoClient
 from random import randint
@@ -19,8 +20,8 @@ brands = ['Schwinn', 'Giant', 'Trek']
 
 client = MongoClient()
 
-db = client.bikeshare
-print("Created database: 'bikeshare'")
+db = client['bikeshare-test']
+print("Created database: 'bikeshare-test'")
 db.user.drop()
 db.activeshare.drop()
 

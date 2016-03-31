@@ -3,19 +3,11 @@
 from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 from flask.ext.bower import Bower
+from bikeshare_app.config import configure_app
 
-db = MongoEngine()
-
-def create_app(**config_overrides):
-    """Function to generate the app, this way we can change settings before
-    creating it"""
-    app = Flask(__name__)
-    Bower(app)
-    app.config['MONGODB_SETTINGS'] = {
-        'db': 'bikeshare'
-    }
-    app.config.update(config_overrides)
-    db.init_app(app)
-    return app
+app = Flask(__name__)
+configure_app(app)
+Bower(app)
+db = MongoEngine(app)
 
 import bikeshare_app.views
