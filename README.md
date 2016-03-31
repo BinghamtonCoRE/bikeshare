@@ -27,6 +27,12 @@ bower install
 
 ## Running the app
 
+First configure the app based on the environment you're running it in. If you are developing, you must set the `FLASK_ENVIRONMENT` environment variable to `development`.
+
+```
+export FLASK_ENVIRONMENT=development
+```
+
 To start the app simply run the following from the top level directory:
 
 ```
