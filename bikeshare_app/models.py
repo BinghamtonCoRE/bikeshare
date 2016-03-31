@@ -37,7 +37,6 @@ class PersonalBike(db.EmbeddedDocument):
 
 class User(db.Document):
     """Model for users"""
-    objects = type
     name = db.StringField(required=True)
     email = db.EmailField(required=True, unique=True)
     active = db.BooleanField(required=True, default=True)
@@ -48,7 +47,6 @@ class User(db.Document):
 
 class ActiveShare(db.Document):
     """Model for the bike share owned bikes"""
-    objects = type
     available = db.BooleanField(required=True, default=False)
     uses = db.IntField(required=True, default=0)
     height_min = db.IntField(required=True)
