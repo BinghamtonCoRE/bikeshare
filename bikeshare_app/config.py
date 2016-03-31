@@ -15,7 +15,6 @@ class BaseConfig(object):
 
 class TestingConfig(BaseConfig):
     """Configuration for running unit tests"""
-    DEBUG = False
     TESTING = True
     MONGODB_SETTINGS = {'db': 'bikeshare-test'}
     LOGGING_LEVEL = logging.DEBUG
@@ -30,7 +29,7 @@ class DevelopmentConfig(BaseConfig):
 CONFIG = {
     'development': 'bikeshare_app.config.DevelopmentConfig',
     'testing': 'bikeshare_app.config.TestingConfig',
-    'default': 'bikeshare_app.config.BaseConfig'
+    'default': 'bikeshare_app.config.BaseConfig',
 }
 
 def configure_app(app):
