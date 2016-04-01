@@ -1,7 +1,7 @@
 """Module containing configurations for the flask server"""
 from os import getenv
 import logging
-# TODO: Setup a logging environment
+
 
 # pylint: disable=too-few-public-methods
 class BaseConfig(object):
@@ -13,11 +13,13 @@ class BaseConfig(object):
     LOGGING_LOCATION = 'bikeshare.log'
     LOGGING_LEVEL = logging.INFO
 
+
 class TestingConfig(BaseConfig):
     """Configuration for running unit tests"""
     TESTING = True
     MONGODB_SETTINGS = {'db': 'bikeshare-test'}
     LOGGING_LEVEL = logging.DEBUG
+
 
 class DevelopmentConfig(BaseConfig):
     """The configuration that should be run during development"""
@@ -26,11 +28,13 @@ class DevelopmentConfig(BaseConfig):
     MONGODB_SETTINGS = {'db': 'bikeshare-test'}
     LOGGING_LEVEL = logging.DEBUG
 
+
 CONFIG = {
     'development': 'bikeshare_app.config.DevelopmentConfig',
     'testing': 'bikeshare_app.config.TestingConfig',
     'default': 'bikeshare_app.config.BaseConfig',
 }
+
 
 def configure_app(app):
     """Configure the app based on where it is deployed. First check for the
@@ -44,3 +48,4 @@ def configure_app(app):
     formatter = logging.Formatter(app.config['LOGGING_FORMAT'])
     handler.setFormatter(formatter)
     app.logger.addHandler(handler)
+
