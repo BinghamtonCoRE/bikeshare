@@ -1,7 +1,7 @@
 # pylint: skip-file
 import sys
-from pymongo import MongoClient
 from random import randint
+from pymongo import MongoClient
 
 while (True):
     userInput = input("This script will drop all data from your DB's before inserting, continue? [y/n]")

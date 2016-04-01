@@ -1,9 +1,17 @@
 language: python
 python:
   - "3.5"
+services:
+  - mongodb
 install:
   - pip install -r requirements.txt
+before_script:
+  - npm install -g bower
+  - bower install
 script:
   - nosetests
   - pylint -E bikeshare_app
   - pylint -E tests
+env:
+  - BIKESHARE_APP_SECRET="\xf3& \x98\x9cy\xf6\xde6\x91\xd0\x8a\xd6\xbfF[\x86'6+J\x1cs\xfa"
+    BIKESHARE_ADMIN_PASSWORD=DummyPassword123
