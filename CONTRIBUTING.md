@@ -84,6 +84,7 @@ This section has information on how the code should be styled.
   * Third party libraries
   * Local libraries
 * Use single quotes (`'`) for strings
+* Use the new format method for strings. `'foo = {}'.format(16)`
 
 ####Pet Peeves
 * No whitespace inside parethesis or brackets. `foo(arg1, arg2)` instead of `foo( arg1, arg2 )`.
