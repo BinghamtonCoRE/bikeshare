@@ -26,7 +26,8 @@ def user_loader(email):
 def index():
     """Return the index page for the app"""
     app.logger.debug('Rendering index page')
-    return render_template('bikes.html', bikes=ActiveShare.objects(available=True))
+    return render_template('bikes.html',
+                           bikes=ActiveShare.objects(available=True))
 
 
 @app.route('/login', methods=['GET', 'POST'])
