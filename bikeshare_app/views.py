@@ -3,6 +3,7 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from flask import url_for
+from flask import flash
 import flask.ext.login as flask_login
 from . import app
 from . import login_manager
@@ -38,11 +39,13 @@ def login():
         # Allow user through if check passed, else log attempt and return home
         return render_template('login.html')
     email = request.form['email']
-    if request.form['pass'] == getenv('BIKESHARE_ADMIN_PASSWORD'):
+    if request.form['passwd'] == getenv('BIKESHARE_ADMIN_PASSWORD'):
         user = User()
         user.id = email
         flask_login.login_user(user)
+        flash('Admin login successful')
         return redirect(url_for('admin'))
+    flash('Invalid password')
     return redirect(url_for('index'))
 
 
@@ -51,6 +54,7 @@ def login():
 def logout():
     """Logout route."""
     flask_login.logout_user()
+    flash('You were logged out')
     return redirect(url_for('index'))
 
 
