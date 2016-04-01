@@ -1,3 +1,4 @@
+"""Basic unit tests"""
 from os import getenv
 import flask
 from bikeshare_app import app
@@ -10,6 +11,8 @@ def test_home():
 
 
 class TestAdmin():
+    """Tests for the admin control panel"""
+    # pylint: disable=missing-docstring
     @classmethod
     def setup_class(cls):
         print(__name__, 'TestAdmin.setup_class() ------')
@@ -20,6 +23,7 @@ class TestAdmin():
 
     def setup(self):
         """Get test client for HTTP methods"""
+        # pylint: disable=attribute-defined-outside-init
         self.app = app.test_client()
 
     def login(self, email, password):
@@ -37,6 +41,7 @@ class TestAdmin():
 
     def test_admin_log_in(self):
         """Test the login endpoint to access admin"""
+        # pylint: disable=invalid-name
         rv = self.login('admin', 'MIDNA')
         assert b'Available Bikes' in rv.data
         rv = self.admin()
