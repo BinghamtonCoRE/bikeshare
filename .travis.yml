@@ -8,6 +8,5 @@ script:
   - pylint -E bikeshare_app
   - pylint -E tests
 env:
-  - FLASK_ENVIRONMENT=production
   - BIKESHARE_APP_SECRET="\xf3& \x98\x9cy\xf6\xde6\x91\xd0\x8a\xd6\xbfF[\x86'6+J\x1cs\xfa"
-  - BIKESHARE_ADMIN_PASSWORD=DummyPassword123
+    BIKESHARE_ADMIN_PASSWORD=DummyPassword123
