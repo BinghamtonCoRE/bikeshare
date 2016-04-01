@@ -83,7 +83,7 @@ This section has information on how the code should be styled.
   * Standard library
   * Third party libraries
   * Local libraries
-* Use double quotes (`"`) for strings
+* Use single quotes (`'`) for strings
 
 ####Pet Peeves
 * No whitespace inside parethesis or brackets. `foo(arg1, arg2)` instead of `foo( arg1, arg2 )`.
