@@ -1,6 +1,6 @@
+from os import getenv
 import flask
 from bikeshare_app import app
-from os import getenv
 
 
 def test_home():

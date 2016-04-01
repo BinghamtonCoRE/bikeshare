@@ -1,14 +1,10 @@
 """Define the views for the app"""
-from flask import render_template
-from flask import request
-from flask import redirect
-from flask import url_for
-from flask import flash
+from os import getenv
+from flask import render_template, request, redirect, url_for, flash
 import flask.ext.login as flask_login
 from . import app
 from . import login_manager
 from .models import ActiveShare
-from os import getenv
 
 
 class User(flask_login.UserMixin):
