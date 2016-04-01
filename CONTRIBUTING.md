@@ -108,7 +108,7 @@ If the function name is very long and the parameters can't fit on the same line 
 def really_long_function_name_no_params_fit(
         var_one, var_two
         var_three, var_four):
-    print("Hello world!")
+    print('Hello world!')
 ```
 
 * Don't put spaces around the `=` for default parameters `def foo(bar='no space')`
