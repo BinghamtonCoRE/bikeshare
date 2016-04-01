@@ -25,12 +25,14 @@ def user_loader(email):
 @app.route('/')
 def index():
     """Return the index page for the app"""
+    app.logger.debug('Rendering index page')
     return render_template('bikes.html',
                            bikes=ActiveShare.objects(available=True))
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """Page to both login and process logins"""
     if request.method == 'GET':
         # Allow user through if check passed, else log attempt and return home
         return render_template('login.html')
@@ -54,16 +56,21 @@ def logout():
     return redirect(url_for('index'))
 
 
-# Admin page
-# Display bike availabilities again. Ability to alter database info
 @app.route('/admin')
 @flask_login.login_required
 def admin():
-    """The admin page"""
+    """The admin page.
+
+    Display the bike availabilities again. Also add ability to alter
+    the DB's
+    """
+    app.logger.debug('Rendering admin page')
+    # TODO Check user credentials for admin role
+    # Allow user through if check passed, else log attempt and return home
     return render_template('admin.html')
 
-
-@app.route('/request_bike/<user_email>/<int:bike_id>')
-def request_bike():
+@app.route("/request_bike/<user_email>/<int:bike_id>")
+def request_bike(user_email, bike_id):
     """This endpoint is for requesting a bike"""
-    return 'Bike request'
+    app.logger.debug('User {} requesting bike {}'.format(user_email, bike_id))
+    return render_template('admin.html')
