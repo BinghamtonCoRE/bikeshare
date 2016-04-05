@@ -7,9 +7,11 @@ from . import login_manager
 from .models import ActiveShare
 
 
+# pylint: disable=invalid-name
+# We need to use id for flask-login but pylint doesnt like it
 class User(flask_login.UserMixin):
     """User model for login."""
-    pass
+    id = None
 
 
 @login_manager.user_loader

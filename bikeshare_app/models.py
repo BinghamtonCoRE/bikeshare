@@ -3,7 +3,6 @@ from datetime import date
 from bikeshare_app import db
 
 
-# pylint: disable=too-few-public-methods
 class Profile(db.EmbeddedDocument):
     """Embedded user profile"""
     height = db.IntField(required=True)

@@ -1,3 +1,6 @@
 [MASTER]
 load-plugins=pylint_flask
 generated-members=objects,id
+
+[MESSAGES CONTROL]
+disable=R0903,fixme,locally-disabled,cyclic-import
