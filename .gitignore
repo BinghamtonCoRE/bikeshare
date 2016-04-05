@@ -90,3 +90,5 @@ ENV/
 
 **/.ropeproject/*
 **/*.swp
+
+.DS_Store
