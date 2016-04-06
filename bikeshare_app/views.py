@@ -29,6 +29,14 @@ def index():
     return render_template('bikes.html',
                            bikes=ActiveShare.objects(available=True))
 
+# Need to have a route to the home page
+# Probably makes more sense if this is routed at "/"
+# as the index page rather than what is above
+@app.route('/home')
+def home():
+    """Return the home page for the app"""
+    app.logger.debug('Rendering home page')
+    return render_template('home.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
