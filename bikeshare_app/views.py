@@ -38,6 +38,12 @@ def home():
     app.logger.debug('Rendering home page')
     return render_template('home.html')
 
+@app.route('/bikeshare')
+def bikeshare():
+    """Return the bike share page for the app"""
+    app.logger.debug('Rendering bikeshare page')
+    return render_template('bikeshare.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     """Page to both login and process logins"""

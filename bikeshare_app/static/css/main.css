@@ -15,10 +15,10 @@
 
 #banner {
   background-color: #3c4981;
-
+  margin-top: -50px;
 }
 #navigation {
-    /*margin-bottom: 50px;*/
+    margin-bottom: 50px;
     background-color: #006747;
 }
 
