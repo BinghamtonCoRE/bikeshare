@@ -1,7 +1,18 @@
 /*=================
     Navigation
 ===================*/
+#frame {
+  position: absolute;
 
+}
+#footer {
+  background-color: #006747;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 50px;
+}
 #homeContainer {
   margin-top: 30px;
   padding-top: 20px;

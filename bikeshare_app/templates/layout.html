@@ -27,5 +27,15 @@
         <script src="{{ url_for('bower.static', filename='jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ url_for('bower.static', filename='semantic/dist/semantic.min.js') }}"></script>
         {% endblock %}
+        {% block footer %}
+          <div id="footer" class="ui inverted vertical footer segment">
+              <div class="ui center aligned container">
+                <div class="ui horizontal inverted small divided link list">
+                  <a class="item" href="/home">Home</a>
+                  <a class="item" href="/bikeshare">Bike Share</a>
+                </div>
+              </div>
+            </div>
+      {% endblock %}
     </body>
 </html>
