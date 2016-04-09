@@ -45,7 +45,7 @@ def bikeshare():
     return render_template('bikeshare.html')
 
 @app.route('/policies')
-def bikeshare():
+def policies():
     """Return the polices page for the app"""
     app.logger.debug('Rendering policies page')
     return render_template('policies.html')
