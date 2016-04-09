@@ -65,6 +65,12 @@ table#available_bikes {
     background-color: #006747;
 }
 
+/*=====================
+* Section Tags
+=======================*/
+section {
+    margin-top: 20px;
+}
 
 /*=====================
 * About / Bikeshare

@@ -62,6 +62,18 @@ def vision():
     app.logger.debug('Rendering vision page')
     return render_template('vision.html')
 
+@app.route('/bikeshop')
+def bikeshop():
+    """Return the bikeshop page for the app"""
+    app.logger.debug('Rendering bikeshop page')
+    return render_template('bikeshop.html')
+
+@app.route('/resources')
+def resources():
+    """Return the resources page for the app"""
+    app.logger.debug('Rendering resources page')
+    return render_template('resources.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     """Page to both login and process logins"""
