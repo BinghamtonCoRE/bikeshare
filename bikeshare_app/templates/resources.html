@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block title %}Resources{% endblock %}
+{% block description %}BUBS is Binghamton University's own bike share program.{% endblock %}
+
+{% block content %}
+<div class="pusher">
+    <div class="ui center aligned segment">
+        <h1>Resources</h1>
+    </div>
+    <div class="ui container">
+        <h3>Provided is a list of resources student cyclists/activists may find useful.</h3>
+        <section class="about">
+            <h2><strong>Maps:</strong></h2>
+            <ul class="ui list">
+                <li>
+                    <p>
+                        <a href="{{ url_for('static', filename='resources/bikemap_2011_fwv-small.pdf') }}">Local Bike Trial Map: </a>A map of Bike trails in the Binghamton/Vestal area
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="{{ url_for('static', filename='resources/fitnesstrailsmap1bu.pdf') }}">Fitness Trails on Campus: </a> A map of fitness trails provided by Campus Rec
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="{{ url_for('static', filename='resources/gbgmaps.pdf') }}">Map of Future Two Rivers Greenway Route: </a> A look at the future Two Rivers Greenway that is currently in progress
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="about">
+            <h2><strong>Activism:</strong></h2>
+            <ul class="ui list">
+                <li>
+                    <p>
+                        <a href="http://nybc.net/">New York Bicycling Coalition: </a>Making New York State a Better Place to Ride Bikes
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://www.bmtsonline.com/">Binghamton Metropolitan Transportation Study: </a> The organization in charge of transportation planning in Broome/Tioga County
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="about">
+            <h2><strong>Bicycle Repair</strong></h2>
+            <ul class="ui list">
+                <li>
+                    <p>
+                        <a href="http://nybc.net/">Tune Up Your Bicycle for Spring: </a>An instructional bicycle maintenance video
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://www.chenangopoint.com/index.php">Chenango Point Cycles: </a> A full-service local bike shop serving the Binghamton/Vestal community.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="about">
+            <h2><strong>Other Bike Share Programs</strong></h2>
+            <ul class="ui list">
+                <li>
+                    <p>
+                        <a href="http://www.stonybrook.edu/sustainability/biking-at-stony-brook/wolf-ride-bike-share.shtml">Wolf Ride Bike Share: </a>Stonybrook’s Bike Share program
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://bigredbikes.cornell.edu/">Big Red Bikes: </a> Cornell’s Bike Share program
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://www.ithaca.edu/orgs/bbikes/about/">Bomber Bikes: </a> Ithaca College’s Bike Share Program
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
+{% endblock %}
