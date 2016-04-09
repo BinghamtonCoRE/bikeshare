@@ -44,6 +44,12 @@ def bikeshare():
     app.logger.debug('Rendering bikeshare page')
     return render_template('bikeshare.html')
 
+@app.route('/policies')
+def bikeshare():
+    """Return the polices page for the app"""
+    app.logger.debug('Rendering policies page')
+    return render_template('policies.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     """Page to both login and process logins"""
