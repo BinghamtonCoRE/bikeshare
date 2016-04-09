@@ -61,9 +61,9 @@ If you're unsure about how to contribute to begin contributing to BUBS, have a l
 
 ###Pull Requests
 * If you include changes to frontend you should probably include screenshots.
-* Run pylint on your code while developing as this is what we use during our Travis Build
-* Follow [PEP8 standards](https://www.python.org/dev/peps/pep-0008/) when adding new code
-* Code should not fail unit tests unless for a good reason
+* Run pylint on your code while developing as this is what we use during our Travis Build.
+* Follow [PEP8 standards](https://www.python.org/dev/peps/pep-0008/) when adding new code.
+* Code should not fail unit tests unless for a good reason.
 * Include helpful docstring comments. See the [Style Guide](#style-guide) in the appendix.
 * Tag it appropriately. See the [Tags Guide](#tags-guide) in the appendix.
 * `# TODO ...`'s are ok, but there should probably be an issue opened for them if they are merged.
@@ -85,6 +85,9 @@ This section has information on how the code should be styled.
   * Local libraries
 * Use single quotes (`'`) for strings
 * Use the new format method for strings. `'foo = {}'.format(16)`
+
+####Frontend Development
+* Follow the style guide [here](https://google.github.io/styleguide/htmlcssguide.xml) for HTML and CSS files
 
 ####Pet Peeves
 * No whitespace inside parethesis or brackets. `foo(arg1, arg2)` instead of `foo( arg1, arg2 )`.
