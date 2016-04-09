@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block description %}BUBS is Binghamton University's own bike share program.{% endblock %}
+
+{% block content %}
+<div class="pusher">
+    <div id="banner" class="ui inverted vertical masthead center aligned segment">
+        <h1 id="headerText" class="ui huge header">Binghamton University Bike Share
+            <i class="bicycle icon"></i>
+        </h1>
+    </div>
+    <div id="home" class="ui container">
+        <p>
+            Want to ride a bike for free without having to haul your own up here? The BU Bike Share offers free bike rentals to students and faculty! The program operates every day of the week from the Information Desk in the University Union. Ride a bike on your way to class or around local nature trails!
+        </p>
+        <p>
+            If you bring your own bike and need help with maintenance, visit our student-run shop in the Old Union basement and let us help you out! We can help with everything from winter rust to flat tires. Check online for our fall hours!
+        </p>
+        <p>
+            The bike share and shop are completely student-run, and we’re always looking for new volunteers!
+        </p>
+        <div class="ui embed" data-source="youtube" data-id="G68gtwoROrU?rel=0" data-placeholder="{{ url_for('static', filename='images/home-thumbnail.jpg') }}"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+$('.ui.embed').embed();
+</script>
+{% endblock %}

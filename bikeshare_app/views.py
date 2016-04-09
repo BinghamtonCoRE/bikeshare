@@ -31,6 +31,50 @@ def index():
     return render_template('bikes.html',
                            bikes=ActiveShare.objects(available=True))
 
+# Need to have a route to the home page
+# Probably makes more sense if this is routed at "/"
+# as the index page rather than what is above
+@app.route('/home')
+def home():
+    """Return the home page for the app"""
+    app.logger.debug('Rendering home page')
+    return render_template('home.html')
+
+@app.route('/bikeshare')
+def bikeshare():
+    """Return the bike share page for the app"""
+    app.logger.debug('Rendering bikeshare page')
+    return render_template('bikeshare.html')
+
+@app.route('/policies')
+def policies():
+    """Return the polices page for the app"""
+    app.logger.debug('Rendering policies page')
+    return render_template('policies.html')
+
+@app.route('/projects')
+def projects():
+    """Return the projects page for the app"""
+    app.logger.debug('Rendering projects page')
+    return render_template('projects.html')
+
+@app.route('/vision')
+def vision():
+    """Return the vision page for the app"""
+    app.logger.debug('Rendering vision page')
+    return render_template('vision.html')
+
+@app.route('/bikeshop')
+def bikeshop():
+    """Return the bikeshop page for the app"""
+    app.logger.debug('Rendering bikeshop page')
+    return render_template('bikeshop.html')
+
+@app.route('/resources')
+def resources():
+    """Return the resources page for the app"""
+    app.logger.debug('Rendering resources page')
+    return render_template('resources.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

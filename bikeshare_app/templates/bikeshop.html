@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Bike Shop{% endblock %}
+{% block description %}BUBS is Binghamton University's own bike share program.{% endblock %}
+
+{% block content %}
+<div class="pusher">
+    <div class="ui center aligned segment">
+        <h1>Bike Shop</h1>
+    </div>
+    <div class="ui container">
+        <img class="ui centered big image" src="{{ url_for('static', filename='images/bikeshop.jpg') }}"/>
+        <section class="about">
+            <h1>
+                Need Some Help?
+            </h1>
+            <p>
+                The Binghamton University Bike Shop is our brand new facility located in Room 001 in the basement of the Old Union, adjacent to the Meal Plan Office.
+            </p>
+            <p>
+                Please come to us during our office hours (listed below) to get any Binghamton University bike-related information.
+            </p>
+            <p>
+                If you would like help fixing your own bike, please submit a Request Repair Help form.  Please bear with us as our shop develops throughout the year. Any tips or suggestions are helpful.
+            </p>
+        </section>
+        <section class="about">
+            <h1>
+                Want to Get Involved?
+            </h1>
+            <p>
+                Our mechanics have all taken a bicycle maintenance course through Outdoor Pursuits.  If you are interested in taking this Bike Share-oriented 1 credit course next semester, please contact us. Class size is limited and spots are on a first-come-first-serve basis
+            </p>
+            <p>
+                Otherwise, just stop by our office hours and let us know you want to help out!
+            </p>
+            <p>
+                If you would like help fixing your own bike, please submit a Request Repair Help form.  Please bear with us as our shop develops throughout the year. Any tips or suggestions are helpful.
+            </p>
+        </section>
+        <section class="about">
+            <h1>
+                Hours:
+            </h1>
+            <p>
+                Our Spring 2015 shop hours are as follows:
+            </p>
+            <p>
+                <strong>Monday – Friday, 12:00 PM – 4:00 PM</strong>
+            </p>
+        </section>
+    </div>
+</div>
+</div>
+{% endblock %}

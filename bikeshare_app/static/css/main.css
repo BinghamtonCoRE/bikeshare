@@ -1,9 +1,9 @@
 /*=================
-    Navigation
+* Navigation
 ===================*/
-
 #navigation {
     margin-bottom: 50px;
+    background-color: #006747;
 }
 
 #navigation .header.item {
@@ -15,11 +15,86 @@
     color: #fff;
     font-size: 18px;
 }
+/*=====================
+* Home
+=======================*/
+div#home {
+    padding: 40px 20px;
+}
+
+div#home p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+#headerText {
+    font-size: 4em;
+    margin-top: 50px;
+    color: #0000;
+}
 
 /*=====================
-    Available Bikes
+* Banner
 =======================*/
+#banner {
+    background-color: #3c4981;
+    margin-top: -50px;
+}
 
+/*=====================
+* Footer
+=======================*/
+#footer {
+    background-color: #006747;
+    margin-top: 20px;
+}
+
+/*=====================
+* Available Bikes
+=======================*/
 table#available_bikes {
     margin-bottom: 25px;
+    border-top: 0.2em solid #006747;
+
+}
+
+/*=================
+* Colors
+===================*/
+.bingColor {
+    background-color: #006747;
+}
+
+/*=====================
+* Section Tags
+=======================*/
+section {
+    margin-top: 20px;
+}
+
+/*=====================
+* About / Bikeshare
+=======================*/
+img#bikes {
+    padding: 20px;
+}
+
+section.about p,
+section.about ol li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+section.about .ui.ordered.list .list>.item:before,
+section.about .ui.ordered.list>.item:before,
+section.about ol.ui.list li:before {
+    content: counters(ordered,".") ".";
+    margin-left: -2.5rem;
+}
+
+section.about .ui.list .list>.item,
+section.about .ui.list>.item,
+section.about ol.ui.list li,
+section.about ul.ui.list li {
+    padding: .21428571em 1.5em;
 }
