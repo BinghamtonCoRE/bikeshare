@@ -52,9 +52,15 @@ def policies():
 
 @app.route('/projects')
 def projects():
-    """Return the projectss page for the app"""
+    """Return the projects page for the app"""
     app.logger.debug('Rendering projects page')
     return render_template('projects.html')
+
+@app.route('/vision')
+def vision():
+    """Return the vision page for the app"""
+    app.logger.debug('Rendering vision page')
+    return render_template('vision.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
