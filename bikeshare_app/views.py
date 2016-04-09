@@ -50,6 +50,12 @@ def policies():
     app.logger.debug('Rendering policies page')
     return render_template('policies.html')
 
+@app.route('/projects')
+def projects():
+    """Return the projectss page for the app"""
+    app.logger.debug('Rendering projects page')
+    return render_template('projects.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     """Page to both login and process logins"""
