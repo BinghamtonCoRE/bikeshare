@@ -3,7 +3,7 @@
   "description": "Web application for checking out BUBS bikes",
   "version": "0.0.1",
   "engines": {
-    "npm": "5.10.1"
+    "node": "5.10.1"
   },
   "scripts": {
     "heroku-postbuild": "bower install"
