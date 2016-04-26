@@ -1,5 +1,5 @@
 {
-  "name": "binghamton-bikshare",
+  "name": "binghamton-bikeshare",
   "description": "Web application for checking out BUBS bikes",
   "version": "0.0.1",
   "engines": {
