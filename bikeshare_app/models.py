@@ -1,3 +1,4 @@
+# pylint: disable=invalid-name,too-many-instance-attributes,too-many-arguments
 """Models for the app"""
 from bikeshare_app import db
 
@@ -32,7 +33,8 @@ class Bike(db.Model):
     #repair_ids = db.ListField(db.ObjectIdField(), required=False)
     reported_missing = db.Column(db.Boolean())
 
-    def __init__(self, owner, make, model, color, serial, size, repair_active=False, location=None, reported_missing=False):
+    def __init__(self, owner, make, model, color, serial, size,
+                 repair_active=False, location=None, reported_missing=False):
         self.owner = owner
         self.make = make
         self.model = model
@@ -92,7 +94,8 @@ class ActiveShare(db.Model):
     key_number = db.Column(db.String(50))
     bike = db.Column(db.ForeignKey('bikes.id'))
 
-    def __init__(self, height_min, height_max, key_number, bike, available=True, uses=0, last_user_email=None):
+    def __init__(self, height_min, height_max, key_number, bike, available=True,
+                 uses=0, last_user_email=None):
         self.height_min = height_min
         self.height_max = height_max
         self.key_number = key_number
