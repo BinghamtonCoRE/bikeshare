@@ -15,5 +15,4 @@ db = SQLAlchemy(app)
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
 
-from bikeshare_app.models import User
 import bikeshare_app.views
