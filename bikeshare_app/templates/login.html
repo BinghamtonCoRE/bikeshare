@@ -1,19 +1,50 @@
 {% extends "layout.html" %}
 {% block title %}Login{% endblock %}
 {% block description %}BUBS is Binghamton University's own bike share program.{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block navigation %}{% endblock %}
+
 {% block content %}
-<div class="ui stackable grid container">
+<div id="loginArea" class="ui middle aligned center aligned grid">
     <div class="column">
-        <div class="ui message">
-            <div class="header">
-                Enter your login credentials:
+        <a id="loginHeader" href="{{ url_for('index') }}">
+            <h2 class="ui logo header">
+                <img src="{{ url_for('static', filename='images/logo.png') }}">
+                <div class="content">
+                    Welcome back!
+                </div>
+            </h2>
+        </a>
+        <form class="ui large form">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="email" placeholder="E-mail address" />
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password" />
+                    </div>
+                </div>
+                <div class="ui fluid large bingColor submit button">Login</div>
             </div>
-            <form action="login" method="POST">
-                <input type="text" name="email" id="email" placeholder="email"></input>
-                <input type="password" name="passwd" id="passwd" placeholder="password"></input>
-                <input type="submit" name="submit"></input>
-            </form>
+
+            <div class="ui error message"></div>
+
+        </form>
+
+        <div class="ui message">
+            New to us? <a href="{{ url_for('register') }}">Sign Up</a>
         </div>
     </div>
 </div>
 {% endblock %}
+
+{% block footer %}{% endblock %}
