@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block description %}BUBS is Binghamton University's own bike share program.{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block navigation %}{% endblock %}
+
+{% block content %}
+<div id="registerArea" class="ui middle aligned center aligned grid">
+    <div class="column">
+        <div class="ui piled segment">
+            <a id="registerHeader" href="{{ url_for('index') }}">
+                <h2 class="ui logo header">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}">
+                    <div class="content">
+                        Nice to meet you!
+                    </div>
+                </h2>
+            </a>
+        </div>
+        <form class="ui large form">
+            <h2 class="ui horizontal divider header">
+                <i class="student icon"></i>
+                What is your academic standing?
+            </h2>
+
+            <div>
+                <div class="inline fields">
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="standing" tabindex="0" class="hidden">
+                            <label>Freshman</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="standing" tabindex="0" class="hidden">
+                            <label>Sophomore</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="standing" tabindex="0" class="hidden">
+                            <label>Junior</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="standing" tabindex="0" class="hidden">
+                            <label>Senior</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="standing" tabindex="0" class="hidden">
+                            <label>Graduate</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="standing" tabindex="0" class="hidden">
+                            <label>Staff</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="ui horizontal divider header">
+                <i class="building icon"></i>
+                Are you on-campus or off-campus?
+            </h2>
+
+            <div class="inline fields">
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="location" tabindex="0" class="hidden">
+                        <label>On-Campus</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="location" tabindex="0" class="hidden">
+                        <label>Off-Campus</label>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="ui horizontal divider header">
+                <i class="file icon"></i>
+                Do you agree with the following policies?
+            </h2>
+
+            <div class="ui checkbox policy">
+                <input type="checkbox" name="policy1">
+                <label>
+                    <div class="ui segment">
+                        <p>
+                            I, a (“Cyclist”), a current student/staff/faculty member of Binghamton University, am over the age of eighteen and therefore have the legal authority to enter into this agreement on this day this year as set forth herein.
+                        </p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="ui checkbox policy">
+                <input type="checkbox" name="policy2">
+                <label>
+                    <div class="ui segment">
+                        <p>
+                            Cyclist hereby acknowledges and agrees that Binghamton University is not responsible for the condition of the equipment; therefore, cyclist’s acceptance of the equipment on an "as is" basis. Binghamton University hereby disclaims any and all express and implied warranties, including without limitation those of fitness for intended use, and Binghamton University shall not be liable for consequential, incidental or indirect damages caused by the equipment of cyclist’s use thereof.
+                        </p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="ui checkbox policy">
+                <input type="checkbox" name="policy3">
+                <label>
+                    <div class="ui segment">
+                        <p>
+                            Cyclist shall acknowledge that bicycling can be a hazardous activity that involves risks that may be injurious or fatal. Cyclist agrees to defend, indemnify and hold harmless Binghamton University, and its subsidiaries and related entities, as well as their respective trustees, officers, directors, employees, and students, together with their successors and assigns, from and against any and all claims, suits, liabilities, costs and injury, loss, and damage arising out of cyclist's use of equipment or participation in the program.
+                        </p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="ui checkbox policy">
+                <input type="checkbox" name="policy4">
+                <label>
+                    <div class="ui segment">
+                        <p>
+                            Cyclist shall be responsible for any and all damages resulting from negligent or wrongful use or operation of the equipment. Damages may include, but are not limited to, repairs, parts, and replacement costs. Cyclist is also responsible for paying the full replacement cost of lost or stolen equipment. By checking the box, you acknowledge that any charges may be charged directly to your Binghamton University account.
+                        </p>
+
+                        <div class="ui bulleted list">
+                            <div class="item">
+                                Users must return bike equipment and keys within the time slot assigned when signing out equipment. No bikes can be kept overnight.
+                            </div>
+                            <div class="item">
+                                All bikes and helmets must be returned locked properly to the same location checked out from.
+                            </div>
+                            <div class="item">
+                                Helmets are highly encouraged and are the responsibility of the participant to obtain and wear.
+                            </div>
+                            <div class="item">
+                                Participants should inform staff of problems with individual bicycles and related equipment.
+                            </div>
+                            <div class="item">
+                                Participants should be courteous to to other bikers and pedestrians and follow rights­ of ­way.
+                            </div>
+                            <div class="item">
+                                Cyclists shall not be responsible for damages or failures of the the equipment resulting from normal wear and tear.
+                            </div>
+                            <div class="item">
+                                All participants must comply with related local, state, and federal laws.
+                            </div>
+                            <div class="item">
+                                Abuse of the program guidelines will result in the loss of the bike share privileges.
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="ui fluid large bingColor submit button">Sign Up</div>
+
+            <div class="ui error message"></div>
+        </form>
+
+        <div class="ui message">
+            Already registered? <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additionalScripts %}
+<script>
+    $('.ui.radio.checkbox').checkbox();
+</script>
+{% endblock %}
+
+{% block footer %}{% endblock %}

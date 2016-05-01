@@ -33,7 +33,7 @@ def index():
 
 # Lets just show what bikes are available and have a link to checkout a bike
 @app.route('/bikes')
-def home():
+def availableBikes():
     """Return the bike page for the app"""
     app.logger.debug('Rendering bikes page')
     return render_template('bikes.html',
@@ -100,6 +100,12 @@ def logout():
     flash('You were logged out')
     return redirect(url_for('index'))
 
+@app.route('/register', methods=['GET'])
+def register():
+    """Page to register accounts"""
+    if request.method == 'GET':
+        # Allow user through if check passed, else log attempt and return home
+        return render_template('register.html')
 
 @app.route('/admin')
 @flask_login.login_required
