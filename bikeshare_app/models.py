@@ -1,56 +1,102 @@
 """Models for the app"""
-from datetime import date
 from bikeshare_app import db
 
 
-class Profile(db.EmbeddedDocument):
+class Profile(db.Model):
     """Embedded user profile"""
-    height = db.IntField(required=True)
-    grad_year = db.StringField(required=True, default=date.today().year)
-    violations = db.StringField()
-    fav_bikes = db.ListField(db.IntField())
+    __tablename__ = 'profiles'
+    id = db.Column(db.Integer(), primary_key=True)
+    height = db.Column(db.Integer())
+    grad_year = db.Column(db.String(10))
+    violations = db.Column(db.String(50))
+    #fav_bikes = db.Column(db.ListField(db.IntField())
+
+    def __init__(self, height, grad_year, violations=0):
+        self.height = height
+        self.grad_year = grad_year
+        self.violations = violations
 
 
-class Bike(db.EmbeddedDocument):
+class Bike(db.Model):
     """Model for bikes"""
-    owner = db.StringField(required=True, default="BUBS")
-    make = db.StringField(require=True)
-    model = db.StringField(required=True)
-    color = db.StringField(required=True)
-    serial = db.StringField(required=True)
-    size = db.IntField(required=True)
-    repair_active = db.BooleanField(required=True, default=False)
-    location = db.StringField(required=True)
-    repair_ids = db.ListField(db.ObjectIdField(), required=False)
-    reported_missing = db.BooleanField(required=True, default=False)
+    __tablename__ = 'bikes'
+    id = db.Column(db.Integer(), primary_key=True)
+    owner = db.Column(db.String(50))
+    make = db.Column(db.String(50))
+    model = db.Column(db.String(50))
+    color = db.Column(db.String(50))
+    serial = db.Column(db.String(50))
+    size = db.Column(db.Integer())
+    repair_active = db.Column(db.Boolean())
+    location = db.Column(db.String(50))
+    #repair_ids = db.ListField(db.ObjectIdField(), required=False)
+    reported_missing = db.Column(db.Boolean())
+
+    def __init__(self, owner, make, model, color, serial, size, repair_active=False, location=None, reported_missing=False):
+        self.owner = owner
+        self.make = make
+        self.model = model
+        self.color = color
+        self.serial = serial
+        self.size = size
+        self.repair_active = repair_active
+        self.location = location
+        self.reported_missing = reported_missing
 
 
-class PersonalBike(db.EmbeddedDocument):
+class PersonalBike(db.Model):
     """Model for a users personal bike"""
-    bike = db.EmbeddedDocumentField(Bike, required=True)
-    user = db.ObjectIdField(required=True)
-    owned_since = db.DateTimeField(required=True)
-    comment = db.StringField(required=True)
-    lock_brand = db.StringField(required=False)
+    __tablename__ = 'personal_bikes'
+    id = db.Column(db.Integer(), primary_key=True)
+    bike = db.Column(db.ForeignKey('bikes.id'))
+    user = db.Column(db.ForeignKey('users.id'))
+    owned_since = db.Column(db.Date())
+    comment = db.Column(db.String(300))
+    lock_brand = db.Column(db.String(50))
+
+    def __init__(self, bike, user, owned_since, lock_brand, comment=None):
+        self.bike = bike
+        self.user = user
+        self.owned_since = owned_since
+        self.comment = comment
+        self.lock_brand = lock_brand
 
 
-class User(db.Document):
+class User(db.Model):
     """Model for users"""
-    name = db.StringField(required=True)
-    email = db.EmailField(required=True, unique=True)
-    active = db.BooleanField(required=True, default=True)
-    user_type = db.IntField(required=True, default=0)
-    banned = db.BooleanField(required=True, default=False)
-    profile = db.EmbeddedDocumentField(Profile, required=False)
-    bike = db.EmbeddedDocumentField(PersonalBike, required=False)
+    __tablename__ = 'users'
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(50))
+    email = db.Column(db.String(80), unique=True)
+    active = db.Column(db.Boolean())
+    user_type = db.Column(db.Integer())
+    banned = db.Column(db.Boolean())
 
-class ActiveShare(db.Document):
+    def __init__(self, name, email, active=True, user_type=0, banned=False):
+        self.name = name
+        self.email = email
+        self.active = active
+        self.user_type = user_type
+        self.banned = banned
+
+
+class ActiveShare(db.Model):
     """Model for the bike share owned bikes"""
-    available = db.BooleanField(required=True, default=False)
-    uses = db.IntField(required=True, default=0)
-    height_min = db.IntField(required=True)
-    height_max = db.IntField(required=True)
-    last_user_email = db.EmailField(required=True)
-    key_number = db.StringField(required=True)
-    bike = db.EmbeddedDocumentField(Bike, required=True)
-    meta = {'collection': 'activeshare'}
+    __tablename__ = 'active_share'
+    id = db.Column(db.Integer(), primary_key=True)
+    available = db.Column(db.Boolean())
+    uses = db.Column(db.Integer())
+    height_min = db.Column(db.Integer())
+    height_max = db.Column(db.Integer())
+    last_user_email = db.Column(db.Integer())
+    key_number = db.Column(db.String(50))
+    bike = db.Column(db.ForeignKey('bikes.id'))
+
+    def __init__(self, height_min, height_max, key_number, bike, available=True, uses=0, last_user_email=None):
+        self.height_min = height_min
+        self.height_max = height_max
+        self.key_number = key_number
+        self.bike = bike
+        self.available = available
+        self.uses = uses
+        self.last_user_email = last_user_email
