@@ -107,6 +107,13 @@ def register():
         # Allow user through if check passed, else log attempt and return home
         return render_template('register.html')
 
+@app.route('/checkin', methods=['GET'])
+def checkin():
+    """Page to check in bike"""
+    if request.method == 'GET':
+        # Allow user through if check passed, else log attempt and return home
+        return render_template('checkin.html')
+
 @app.route('/admin')
 @flask_login.login_required
 def admin():
