@@ -17,6 +17,9 @@ class Profile(db.Model):
         self.grad_year = grad_year
         self.violations = violations
 
+    def __repr__(self):
+        return '<Profile grad_year={}>'.format(self.grad_year)
+
 
 class Bike(db.Model):
     """Model for bikes"""
@@ -45,6 +48,9 @@ class Bike(db.Model):
         self.location = location
         self.reported_missing = reported_missing
 
+    def __repr__(self):
+        return '<Bike owner={}>'.format(self.owner)
+
 
 class PersonalBike(db.Model):
     """Model for a users personal bike"""
@@ -63,6 +69,9 @@ class PersonalBike(db.Model):
         self.comment = comment
         self.lock_brand = lock_brand
 
+    def __repr__(self):
+        return '<PersonalBike>'
+
 
 class User(db.Model):
     """Model for users"""
@@ -80,6 +89,9 @@ class User(db.Model):
         self.active = active
         self.user_type = user_type
         self.banned = banned
+
+    def __repr__(self):
+        return '<User email={}>'.format(self.email)
 
 
 class ActiveShare(db.Model):
@@ -103,3 +115,6 @@ class ActiveShare(db.Model):
         self.available = available
         self.uses = uses
         self.last_user_email = last_user_email
+
+    def __repr__(self):
+        return '<ActiveShare available={}>'.format(self.available)
