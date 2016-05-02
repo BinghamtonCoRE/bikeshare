@@ -6,9 +6,12 @@ import logging
 # pylint: disable=too-few-public-methods
 class BaseConfig(object):
     """The base configuration that should be used in production"""
+    db_password = getenv('BIKESHARE_DB_PASSWORD')
+    assert db_password is not None, "No database password is set!"
     DEBUG = False
     TESTING = False
-    MONGODB_SETTINGS = {'db': 'bikeshare'}
+    SQLALCHEMY_DATABASE_URI = \
+        'mysql+pymysql://bikeshare:{}@localhost/bikeshare'.format(db_password)
     LOGGING_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     LOGGING_LOCATION = 'bikeshare.log'
     LOGGING_LEVEL = logging.INFO
@@ -16,8 +19,9 @@ class BaseConfig(object):
 
 class TestingConfig(BaseConfig):
     """Configuration for running unit tests"""
+    DEBUG = True
     TESTING = True
-    MONGODB_SETTINGS = {'db': 'bikeshare-test'}
+    SQLALCHEMY_DATABASE_URI = BaseConfig.SQLALCHEMY_DATABASE_URI + '_test'
     LOGGING_LEVEL = logging.DEBUG
 
 
@@ -25,7 +29,8 @@ class DevelopmentConfig(BaseConfig):
     """The configuration that should be run during development"""
     DEBUG = True
     TESTING = True
-    MONGODB_SETTINGS = {'db': 'bikeshare-test'}
+    SQLALCHEMY_DATABASE_URI = BaseConfig.SQLALCHEMY_DATABASE_URI + '_dev'
+
     LOGGING_LEVEL = logging.DEBUG
 
 

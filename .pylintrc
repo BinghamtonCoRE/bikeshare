@@ -4,3 +4,6 @@ generated-members=objects,id
 
 [MESSAGES CONTROL]
 disable=R0903,fixme,locally-disabled,cyclic-import
+
+[TYPECHECK]
+ignored-modules=flask_sqlalchemy
