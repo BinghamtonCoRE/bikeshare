@@ -89,3 +89,10 @@ label {
 .ui.form .inline.fields {
     justify-content: center;
 }
+
+/*=================
+* Checkin Page
+===================*/
+#damageTextInput{
+    display: none;
+}

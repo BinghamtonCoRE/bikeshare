@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="field" name="damageTextArea">
+                <div class="field" name="damageTextArea" id="damageTextInput">
                     <label>Damage Details:</label>
                     <textarea></textarea>
                 </div>
@@ -98,7 +98,6 @@
 
 {% block additionalScripts %}
 <script>
-    $('div[name="damageTextArea"]').css('display','none');
     $('.ui.radio.checkbox').checkbox();
 
     $('input[id="damageYes"]').change(function() {
