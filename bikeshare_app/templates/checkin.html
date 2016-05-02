@@ -26,25 +26,24 @@
                 <i class="check square icon"></i>
                 Does the bike have any damages?
             </h2>
-s
             <div>
                 <div class="inline fields">
                     <div class="field">
                         <div class="ui radio checkbox">
-                            <input type="radio" id="damageYes" name="standing" tabindex="0" value="Yes" class="hidden">
+                            <input type="radio" id="damageYes" name="damage" tabindex="0" value="Yes" class="hidden">
                             <label>Yes</label>
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui radio checkbox">
-                            <input type="radio" id="damageNo" name="standing" tabindex="0" value="No" class="hidden">
+                            <input type="radio" id="damageNo" name="damage" tabindex="0" value="No" class="hidden">
                             <label>No</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="field" name="damageTextArea">
-                    <label>Explanation:</label>
+                    <label>Damage Details:</label>
                     <textarea></textarea>
                 </div>
             </div>
@@ -57,13 +56,13 @@ s
             <div class="inline fields">
                 <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="location" tabindex="0" class="hidden">
+                        <input type="radio" name="locked" tabindex="0" class="hidden">
                         <label>Yes</label>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="location" tabindex="0" class="hidden">
+                        <input type="radio" name="locked" tabindex="0" class="hidden">
                         <label>No</label>
                     </div>
                 </div>
@@ -77,13 +76,13 @@ s
             <div class="inline fields">
                 <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="location" tabindex="0" class="hidden">
+                        <input type="radio" name="key" tabindex="0" class="hidden">
                         <label>Yes</label>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="location" tabindex="0" class="hidden">
+                        <input type="radio" name="key" tabindex="0" class="hidden">
                         <label>No</label>
                     </div>
                 </div>
@@ -99,7 +98,7 @@ s
 
 {% block additionalScripts %}
 <script>
-    $('div[name="damageTextArea"]').hide();
+    $('div[name="damageTextArea"]').css('display','none');
     $('.ui.radio.checkbox').checkbox();
 
     $('input[id="damageYes"]').change(function() {
@@ -107,7 +106,7 @@ s
     });
 
     $('input[id="damageNo"]').change(function() {
-        $('div[name="damageTextArea"]').hide();;
+        $('div[name="damageTextArea"]').hide();
     });
 </script>
 {% endblock %}
