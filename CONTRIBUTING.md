@@ -149,6 +149,7 @@ foo = [
 | `ui` | Related to frontend or user interfaces. |
 | `crash` | Caused the app to totally crash. |
 | `git` | Related to git functionality. (gitignore problems usually) |
+| `testing` | Related to unit testing. |
 
 ####Pull Request Labels
 | Label Name | Description |
