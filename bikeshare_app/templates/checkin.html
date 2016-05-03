@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block title %}Check In{% endblock %}
+{% block description %}BUBS is Binghamton University's own bike share program.{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block navigation %}{% endblock %}
+
+{% block content %}
+<div id="registerArea" class="ui middle aligned center aligned grid">
+    <div class="column">
+        <div class="ui piled segment">
+            <a id="registerHeader" href="{{ url_for('index') }}">
+                <h2 class="ui logo header">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}">
+                    <div class="content">
+                        How was your ride?
+                    </div>
+                </h2>
+            </a>
+        </div>
+        <form class="ui large form">
+            <h2 class="ui horizontal divider header">
+                <i class="check square icon"></i>
+                Does the bike have any damages?
+            </h2>
+            <div>
+                <div class="inline fields">
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" id="damageYes" name="damage" tabindex="0" value="Yes" class="hidden">
+                            <label>Yes</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" id="damageNo" name="damage" tabindex="0" value="No" class="hidden">
+                            <label>No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field" name="damageTextArea" id="damageTextInput">
+                    <label>Damage Details:</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+
+            <h2 class="ui horizontal divider header">
+                <i class="lock icon"></i>
+                Was the bike locked up?
+            </h2>
+
+            <div class="inline fields">
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="locked" tabindex="0" class="hidden">
+                        <label>Yes</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="locked" tabindex="0" class="hidden">
+                        <label>No</label>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="ui horizontal divider header">
+                <i class="privacy icon"></i>
+                Was the key returned?
+            </h2>
+
+            <div class="inline fields">
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="key" tabindex="0" class="hidden">
+                        <label>Yes</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="key" tabindex="0" class="hidden">
+                        <label>No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="ui fluid large bingColor submit button">Submit</div>
+
+            <div class="ui error message"></div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block additionalScripts %}
+<script>
+    $('.ui.radio.checkbox').checkbox();
+
+    $('input[id="damageYes"]').change(function() {
+        $('div[name="damageTextArea"]').show();
+    });
+
+    $('input[id="damageNo"]').change(function() {
+        $('div[name="damageTextArea"]').hide();
+    });
+</script>
+{% endblock %}
+
+{% block footer %}{% endblock %}
