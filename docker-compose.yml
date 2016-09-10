@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+    app:
+        image: bikeshare/app
+        environment:
+            BIKESHARE_ADMIN_PASSWORD: "<BIKESHARE_ADMIN_PASSWORD>"
+            BIKESHARE_DB_PASSWORD: "<BIKESHARE_DB_PASSWORD>"
+            FLASK_ENVIRONMENT: "development"
+        ports:
+            - "8000:8000"
